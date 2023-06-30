@@ -12,7 +12,8 @@ Can make blobs on azure portal or azure cli or azure powershell. We use azure po
 
 `az login` -> Takes you to a browers to log in and give back a JSON array which shows your information. **Do NOT put this on github!**
 
-This command creates the storage account. If it has worked you get a large object:
+    # This command creates the storage account. If it has worked you get a large object:
+    
     az storage account create --name tech241elenastorage --resource-group tech241 --location uksouth --sku Standard_LRS
     
     # Lists all of the storage accounts for the resource group
