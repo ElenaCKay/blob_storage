@@ -49,3 +49,6 @@ The url is private and shows that it doesnt exist even though it does to prevent
 
 To stop this you can change the access level.
 
+## Types of redundancy
+
+![redundancy img](azure-storage-replication-options.png)
