@@ -76,6 +76,9 @@ To select the redundancy type for your Azure Blob Storage, follow these steps:
 
 ## Command-line examples using Azure CLI:
 
+To install azure commands on linux here is the command:
+    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
 `az` Every command starts with this in Azure cli
 
 `az login` -> Takes you to a browers to log in and give back a JSON array which shows your information. **Do NOT put this on github!**
