@@ -166,7 +166,7 @@ You are going to get a cat picture (jpg) of your choice to display on the Sparta
    
    ![Alt text](blob-containers.png)
 
-7. Modify the file index.ejs (found in views folder inside the app folder) - add an <img> tag to the HTML so display the uploadedcat.jpg image on the Sparta front page.
+7. Modify the file index.ejs (found in views folder inside the app folder) - add an <img> tag to the HTML so display the uploadedcat.jpg image on the Sparta front page. To find the url click on the file within the container in the picture above.
 
 ![Alt text](editied-html.png)
 
