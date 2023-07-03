@@ -102,18 +102,22 @@ To install azure commands on linux here is the command:
     nano test.txt # Put in a line just to make it not empty
 
     az storage blob upload \ 
-    --account-name tech241elenastorage \ --container-name testcontainer \ 
-    --name newname.txt \ 
-    --file test.txt \ 
+    --account-name tech241elenastorage2 \ 
+    --container-name testcontainer \ 
+    --name uploadedcat.jpg \ 
+    --file ~/uploadedcat.jpg \ 
     --auth-mode login
+
+    # If that doesnt work try this:
+     az storage blob upload --file ~/uploadedcat.jpg --container-name testcontainer --name uploadedcats.jpg --auth-mode login --account-name tech241elenastorage2
 
     # Check if the blob is in the container
 
     az storage blob list \
-    --account-name tech241elenastorage \
+    --account-name tech241elenastorage2 \
     --container-name testcontainer \
     --output table \
-    --suth-mode login
+    --auth-mode login
 
 To make it privite go into storage account on azure portal. Then containers and click on the test container. Within there will ba a file called newname.txt. Click on it and it has the url.
 
@@ -138,3 +142,34 @@ To secure access to your blobs, you can make them private by modifying the acces
 6. Save the changes to apply the access level settings.
 
 Please note that the URL of a private blob will return a 404 error if accessed without proper authorization.
+
+## Adding blob img to Sparta test app
+
+You are going to get a cat picture (jpg) of your choice to display on the Sparta test app front page - the image used will be stored on Azure blob storage.
+
+1. SSH into your Azure VM
+
+2. Install Azure CLI on your Azure VM - this will give you access to the az command.
+   
+   `curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`
+
+3. Login to Azure
+   
+   `az login`
+
+4. Download a cat picture (jpg) of your choice to your VM. I did this by putting it in to this directory and git cloning it into the vm. 
+   `git clone`
+
+5. Upload the cat picture to Azure blob storage (Hint: You will first need a storage account + container) - in blob storage the same file should be called uploadedcat.jpg. To do this look at previous steps above.
+
+6. Set access permissions so it can be viewed by the public.
+   
+   ![Alt text](blob-containers.png)
+
+7. Modify the file index.ejs (found in views folder inside the app folder) - add an <img> tag to the HTML so display the uploadedcat.jpg image on the Sparta front page.
+
+![Alt text](editied-html.png)
+
+8. Run the app (no database) to check your blob image displays on the Sparta test app's front page.
+
+![Alt text](working-blob-picture.png)
